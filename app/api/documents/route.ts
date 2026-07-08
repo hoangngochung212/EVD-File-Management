@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
   }
 
   const newDoc: DocumentItem = {
-    id: body.id,
+    id: "doc-" + Date.now() + "-" + Math.random().toString(36).slice(2, 7),
     code: String(body.code).trim(),
     title: String(body.title).trim(),
     category: body.category || "Other",
