@@ -35,12 +35,12 @@ export async function POST(req: NextRequest) {
   }
 
   const newDoc: DocumentItem = {
-    id: 'doc-' + Date.now() + '-' + Math.random().toString(36).slice(2, 7),
+    id: body.id,
     code: String(body.code).trim(),
     title: String(body.title).trim(),
-    category: body.category || 'Other',
-    status: body.status || 'DRAFT',
-    createdBy: body.createdBy || 'unknown',
+    category: body.category || "Other",
+    status: body.status || "DRAFT",
+    createdBy: body.createdBy || "unknown",
     createdDate: body.createdDate || new Date().toISOString(),
   };
   store.unshift(newDoc);
