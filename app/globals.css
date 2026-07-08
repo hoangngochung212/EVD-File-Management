@@ -1,0 +1,152 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: #f5f6f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.evd-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.evd-cell-error {
+  color: #ff4d4f;
+  font-size: 12px;
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+.evd-editing-row {
+  background: #fffbe6;
+}
+
+.evd-invalid-table {
+  max-height: 300px;
+  overflow: auto;
+}
+
+.evd-virtual-table {
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.evd-virtual-table-header {
+  background: #fafafa;
+  border-bottom: 1px solid #f0f0f0;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.88);
+}
+
+.evd-virtual-table-header .evd-virtual-table-cell {
+  padding: 12px 8px;
+}
+
+.evd-virtual-table-header,
+.evd-virtual-table-row {
+  display: grid;
+  grid-template-columns: var(--evd-grid-cols);
+  align-items: center;
+  min-width: 100%;
+}
+
+.evd-virtual-table-row {
+  border-bottom: 1px solid #f0f0f0;
+  contain: layout style paint;
+  content-visibility: auto;
+  contain-intrinsic-size: 48px;
+}
+
+.evd-virtual-table-row:hover {
+  background: #fafafa;
+}
+
+.evd-virtual-table-row.evd-editing-row {
+  content-visibility: visible;
+  contain: none;
+}
+
+.evd-virtual-table-row.evd-editing-row:hover {
+  background: #fffbe6;
+}
+
+.evd-virtual-table-cell {
+  padding: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.evd-virtual-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.evd-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  background: #fff;
+  color: rgba(0, 0, 0, 0.88);
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.evd-action-btn:hover {
+  color: #1677ff;
+  border-color: #1677ff;
+}
+
+.evd-action-btn-primary {
+  background: #1677ff;
+  border-color: #1677ff;
+  color: #fff;
+}
+
+.evd-action-btn-primary:hover {
+  background: #4096ff;
+  border-color: #4096ff;
+  color: #fff;
+}
+
+.evd-action-btn-danger:hover {
+  color: #ff4d4f;
+  border-color: #ff4d4f;
+}
+
+.evd-virtual-table-body {
+  height: 520px;
+  overflow: auto;
+  position: relative;
+  overscroll-behavior: contain;
+}
+
+.evd-virtual-table-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .evd-page {
+    padding: 12px;
+  }
+}
